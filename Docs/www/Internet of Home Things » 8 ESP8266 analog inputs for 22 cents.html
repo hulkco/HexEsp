@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en-US"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en-US"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en-US"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en-US"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<!--[if IE]>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<![endif]-->
+<title>Internet of Home Things » 8 ESP8266 analog inputs for 22 cents</title>
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://internetofhomethings.com/homethings/xmlrpc.php">
+
+<link rel="stylesheet" type="text/css" media="all" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/style_004.css">
+
+<div class="fit-vids-style">­<style>               .fluid-width-video-wrapper {                 width: 100%;                              position: relative;                       padding: 0;                            }                                                                                   .fluid-width-video-wrapper iframe,        .fluid-width-video-wrapper object,        .fluid-width-video-wrapper embed {           position: absolute;                       top: 0;                                   left: 0;                                  width: 100%;                              height: 100%;                          }                                       </style></div><script src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/jquery-2.js"></script><script src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/bootstrap.js"></script>	
+    <!-- PVC Template -->
+    <script type="text/template" id="pvc-stats-view-template">
+	<% if ( total_view > 0 ) { %>
+		<%= total_view %> <%= total_view > 1 ? "total views" : "total view" %>,
+		<% if ( today_view > 0 ) { %>
+			<%= today_view %> <%= today_view > 1 ? "views today" : "view today" %>
+		<% } else { %>
+		no views today		<% } %>
+	<% } else { %>
+	No views yet	<% } %>
+	</script>
+    <link rel="dns-prefetch" href="http://s0.wp.com/">
+<link rel="dns-prefetch" href="http://s.gravatar.com/">
+<link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="http://netdna.bootstrapcdn.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Internet of Home Things » Feed" href="http://internetofhomethings.com/homethings/?feed=rss2">
+<link rel="alternate" type="application/rss+xml" title="Internet of Home Things » Comments Feed" href="http://internetofhomethings.com/homethings/?feed=comments-rss2">
+<link rel="alternate" type="application/rss+xml" title="Internet of Home Things » 8 ESP8266 analog inputs for 22 cents Comments Feed" href="http://internetofhomethings.com/homethings/?feed=rss2&amp;p=530">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/internetofhomethings.com\/homethings\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.1"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/wp-emoji-release.js" type="text/javascript"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="fb_data_style-css" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/fbstyle.css" type="text/css" media="all">
+<link rel="stylesheet" id="awesome-weather-css" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/awesome-weather.css" type="text/css" media="all">
+<style id="awesome-weather-inline-css" type="text/css">
+.awesome-weather-wrap { font-family: 'Open Sans', sans-serif;  font-weight: 400; font-size: 14px; line-height: 14px; } 
+</style>
+<link rel="stylesheet" id="opensans-googlefont-css" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/css.css" type="text/css" media="all">
+<link rel="stylesheet" id="a3-pvc-style-css" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="social-widget-css" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/social_widget.css" type="text/css" media="all">
+<link rel="stylesheet" id="wptg-styles-css" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/style_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="wlayer_style-css" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/style_003.css" type="text/css" media="all">
+<link rel="stylesheet" id="flipclock-css" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/flipclock.css" type="text/css" media="all">
+<link rel="stylesheet" id="flipclock-added-css" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/added.css" type="text/css" media="all">
+<link rel="stylesheet" id="quotery-quote-of-the-day-plugin-styles-css" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/public_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="kwcusgs-plugin-styles-css" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/public.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-css" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/bootstrap.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstraptheme-css" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/bootstrap-theme.css" type="text/css" media="all">
+<link rel="stylesheet" id="mycustom-css" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/mycustom.css" type="text/css" media="all">
+<link rel="stylesheet" id="superfish-css" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/superfish.css" type="text/css" media="all">
+<link rel="stylesheet" id="flexslider-css" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/flexslider.css" type="text/css" media="all">
+<link rel="stylesheet" id="foundation-css" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/foundation.css" type="text/css" media="all">
+<link rel="stylesheet" id="fontawesome-css" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/font-awesome.css" type="text/css" media="all">
+<!--[if IE 7]>
+<link rel='stylesheet' id='fontawesome-ie-css'  href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css?ver=1.3.9' type='text/css' media='all' />
+<![endif]-->
+<link rel="stylesheet" id="jetpack_css-css" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/jetpack.css" type="text/css" media="all">
+		<style>
+			/* Accessible for screen readers but hidden from view */
+			.fa-hidden { position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden; }
+			.rtl .fa-hidden { left:10000px; }
+			.fa-showtext { margin-right: 5px; }
+		</style>
+		<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/jquery_004.js"></script>
+<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/jquery-migrate.js"></script>
+<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/underscore.js"></script>
+<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/backbone.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var vars = {"api_url":"http:\/\/internetofhomethings.com\/homethings\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/pvc.js"></script>
+<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/flipclock.js"></script>
+<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/public_002.js"></script>
+<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/public.js"></script>
+<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/modernizr.js"></script>
+<link rel="https://api.w.org/" href="http://internetofhomethings.com/homethings/?rest_route=/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://internetofhomethings.com/homethings/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://internetofhomethings.com/homethings/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="My ESP8266 Controlled Temperature Sensors now on ThingSpeak" href="http://internetofhomethings.com/homethings/?p=555">
+<link rel="next" title="A cleaner ESP8266-12 hardware setup" href="http://internetofhomethings.com/homethings/?p=605">
+<meta name="generator" content="WordPress 4.6.1">
+<link rel="canonical" href="http://internetofhomethings.com/homethings/?p=530">
+<link rel="shortlink" href="http://wp.me/p5NRQ8-8y">
+<link rel="alternate" type="application/json+oembed" href="http://internetofhomethings.com/homethings/?rest_route=%2Foembed%2F1.0%2Fembed&amp;url=http%3A%2F%2Finternetofhomethings.com%2Fhomethings%2F%3Fp%3D530">
+<link rel="alternate" type="text/xml+oembed" href="http://internetofhomethings.com/homethings/?rest_route=%2Foembed%2F1.0%2Fembed&amp;url=http%3A%2F%2Finternetofhomethings.com%2Fhomethings%2F%3Fp%3D530&amp;format=xml">
+<link rel="stylesheet" type="text/css" media="all" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/homethings.css">
+<link rel="dns-prefetch" href="http://v0.wordpress.com/">
+<style type="text/css">img#wpstats{display:none}</style>
+<style type="text/css"></style>
+
+<style type="text/css">
+.synved-social-resolution-single {
+display: inline-block;
+}
+.synved-social-resolution-normal {
+display: inline-block;
+}
+.synved-social-resolution-hidef {
+display: none;
+}
+
+@media only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 2dppx),
+only screen and (min-resolution: 192dpi) {
+	.synved-social-resolution-normal {
+	display: none;
+	}
+	.synved-social-resolution-hidef {
+	display: inline-block;
+	}
+}
+</style>
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #ffffff; }
+</style>
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="8 ESP8266 analog inputs for 22 cents">
+<meta property="og:url" content="http://internetofhomethings.com/homethings/?p=530">
+<meta property="og:description" content="Want More Analog Inputs? Do you have a project needing more than one analog input? If your using an ESP8266, that would seem to be a problem as it only offers a single input. Before you commit to u…">
+<meta property="article:published_time" content="2015-05-13T14:07:07+00:00">
+<meta property="article:modified_time" content="2016-05-02T17:36:33+00:00">
+<meta property="og:site_name" content="Internet of Home Things">
+<meta property="og:image" content="http://internetofhomethings.com/homethings/wp-content/uploads/2015/05/graph.jpg">
+<meta property="og:image:width" content="733">
+<meta property="og:image:height" content="444">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+			<link rel="stylesheet" id="custom-css-css" type="text/css" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/a.css">
+			<link rel="stylesheet" type="text/css" id="gravatar-card-css" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/services.css"></head>
+
+<body class="single single-post postid-530 single-format-standard custom-background">
+
+	<!--headercontainer-->
+	<div id="header_container">
+	
+		<div class="row">	
+			<div class="large-12 columns">
+		
+		<!--header-->
+		<div id="header2">
+		<!-------------------------------------------------------------------------------------
+		 lose the theme header logo since we are using bootstrap
+		 --------------------------------------------------------------------------------------
+							<div id="logo"><a href="http://internetofhomethings.com/homethings/" title="Internet of Home Things" rel="home">
+			<img src="http://internetofhomethings.com/homethings/wp-content/uploads/2015/10/header2.jpg" width="180" height="		68" alt="" />
+		</a></div><!--logo end--
+		
+		---------------------------------------------------------------------------------------->
+	<!--menu-->
+	<!----------------------------------------------------------------------------------------------
+	  This was the agency theme menu. Replaced it with a bootstrap menu for standard collapsing icon
+	  ----------------------------------------------------------------------------------------------		
+			
+	<div id="menubar">
+	
+		
+		
+	<div class="menu-header"><ul id="nav" class="menu"><li id="menu-item-14" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-14"><a href="http://internetofhomethings.com/homethings/">Home</a></li>
+<li id="menu-item-210" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-210"><a href="http://internetofhomethings.com/homethings/?page_id=207">Blog</a></li>
+<li id="menu-item-15" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15"><a href="http://internetofhomethings.com/homethings/?page_id=6">About</a></li>
+<li id="menu-item-16" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a href="http://internetofhomethings.com/homethings/?page_id=2">Contact</a></li>
+<li id="menu-item-604" class="menu-item menu-item-type-custom menu-item-object-custom social-icon tumblr menu-item-604"><a title="Follow us on Tumblr" href="https://www.tumblr.com/blog/internetofhomethings"><i class='icon-2x icon-tumblr '></i><span class='fa-hidden'>Tumblr</span></a></li>
+<li id="menu-item-603" class="menu-item menu-item-type-custom menu-item-object-custom social-icon github menu-item-603"><a title="Our shared code" href="https://github.com/internetofhomethings"><i class='icon-2x icon-github '></i><span class='fa-hidden'>Github</span></a></li>
+<li id="menu-item-601" class="menu-item menu-item-type-custom menu-item-object-custom social-icon pinterest menu-item-601"><a title="Follow us on Pinterest" href="https://www.pinterest.com/internetofhomet/internet-of-things/"><i class='icon-2x icon-pinterest '></i><span class='fa-hidden'>Pinterest</span></a></li>
+<li id="menu-item-602" class="menu-item menu-item-type-custom menu-item-object-custom social-icon google-plus menu-item-602"><a title="Follow us on Google+" href="https://plus.google.com/u/0/b/111546542875880774718/111546542875880774718/posts"><i class='icon-2x icon-google-plus '></i><span class='fa-hidden'>Google+</span></a></li>
+<li id="menu-item-185" class="menu-item menu-item-type-custom menu-item-object-custom social-icon youtube menu-item-185"><a title="Follow us on YouTube" href="https://www.youtube.com/channel/UCNtTjCxM_hl3qKkilY9tIfA/videos"><i class='icon-2x icon-youtube '></i><span class='fa-hidden'>Follow Us</span></a></li>
+<li id="menu-item-186" class="menu-item menu-item-type-custom menu-item-object-custom social-icon twitter menu-item-186"><a title="Follow us on Twitter" href="http://twitter.com/NetHomeThings"><i class='icon-2x icon-twitter '></i><span class='fa-hidden'>Follow Us</span></a></li>
+<li id="menu-item-187" class="menu-item menu-item-type-custom menu-item-object-custom social-icon facebook menu-item-187"><a title="Follow us on Facebook" href="http://facebook.com/internetofhomethings"><i class='icon-2x icon-facebook '></i><span class='fa-hidden'>Follow Us</span></a></li>
+</ul></div> 
+
+	</div>
+		
+	------------------------------------------------------------------------------------------>
+	<!--menu end-->
+        <!---------------------------------------------------------------------------------------->
+	<!-- bootstrap menu -->
+        <!---------------------------------------------------------------------------------------->
+	<!--
+	<a class="navbar-brand" href="http://internetofhomethings.com/homethings">Internet of Home Things</a>
+	-->
+
+<!--
+      	<img id="blogo" src="http://internetofhomethings.com/homethings/wp-content/uploads/2015/10/header2.jpg" width="180" 
+	height="68" alt="" />
+-->
+	<nav class="navbar navbar-default" role="navigation">
+  		<div class="container-fluid">
+   			<!-- Brand and toggle get grouped for better mobile display -->
+    			<div class="navbar-header">
+<!---->
+      			<img id="blogo" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/header2.jpg" alt="" width="180" height="68">
+<!---->
+      				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        				<span class="sr-only">Toggle navigation</span>
+        				<span class="icon-bar"></span>
+        				<span class="icon-bar"></span>
+        				<span class="icon-bar"></span>
+      				</button>
+    			</div>
+	<div id="mnu">
+	<div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse"><ul id="menu-main-menu" class="nav navbar-nav" style="width: 736px;"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-14"><a title="Home" href="http://internetofhomethings.com/homethings/">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-210"><a title="Blog" href="http://internetofhomethings.com/homethings/?page_id=207">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15"><a title="About" href="http://internetofhomethings.com/homethings/?page_id=6">About</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a title="Contact" href="http://internetofhomethings.com/homethings/?page_id=2">Contact</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom social-icon tumblr menu-item-604"><a title="Follow Me On Tumbler" href="https://www.tumblr.com/blog/internetofhomethings"><span class="glyphicon Follow us on Tumblr"></span>&nbsp;<i class="icon-2x icon-tumblr "></i><span class="fa-hidden">Tumblr</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom social-icon github menu-item-603"><a title="Follow Me On GitHub" href="https://github.com/internetofhomethings"><span class="glyphicon Our shared code"></span>&nbsp;<i class="icon-2x icon-github "></i><span class="fa-hidden">Github</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom social-icon pinterest menu-item-601"><a title="Follow Me On Pinterest" href="https://www.pinterest.com/internetofhomet/internet-of-things/"><span class="glyphicon Follow us on Pinterest"></span>&nbsp;<i class="icon-2x icon-pinterest "></i><span class="fa-hidden">Pinterest</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom social-icon google-plus menu-item-602"><a title="Follow Me On Google" href="https://plus.google.com/u/0/b/111546542875880774718/111546542875880774718/posts"><span class="glyphicon Follow us on Google+"></span>&nbsp;<i class="icon-2x icon-google-plus "></i><span class="fa-hidden">Google+</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom social-icon youtube menu-item-185"><a title="Follow Me On YouTube" href="https://www.youtube.com/channel/UCNtTjCxM_hl3qKkilY9tIfA/videos"><span class="glyphicon Follow us on YouTube"></span>&nbsp;<i class="icon-2x icon-youtube "></i><span class="fa-hidden">Follow Us</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom social-icon twitter menu-item-186"><a title="Follow Me On Twitter" href="http://twitter.com/NetHomeThings"><span class="glyphicon Follow us on Twitter"></span>&nbsp;<i class="icon-2x icon-twitter "></i><span class="fa-hidden">Follow Us</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom social-icon facebook menu-item-187"><a title="Follow Me On Facebook" href="http://facebook.com/internetofhomethings"><span class="glyphicon Follow us on Facebook"></span>&nbsp;<i class="icon-2x icon-facebook "></i><span class="fa-hidden">Follow Us</span></a></li>
+</ul></div>	</div>
+    </div>
+</nav>	
+<!----------------- end of bootstrap menu -------------------------------------------------------->
+
+	<div class="clear"></div>			
+			
+		</div><!-- header end-->
+
+<!--Let's suppress the slider -->		
+<!-- ?php if(is_front_page()) { 
+	get_template_part( 'element-slider', 'header' );
+ } ? ->
+
+</div>
+
+
+		</div>
+		</div>
+		
+	</div><!--header container end-->
+	
+	<div id="subhead_container">
+		
+		<div class="row">
+
+		<div class="large-12 columns">
+		
+		<h1>8 ESP8266 analog inputs for 22 cents</h1>
+			
+			</div>	
+			
+	</div></div>
+
+		<!--content-->
+		<div class="row" id="content_container">
+			
+			<!--left col--><div class="large-8 columns">
+		
+				<div id="left-col">
+		
+
+									
+					<div class="post-entry">
+
+			<div class="meta-data">
+			
+			<a href="http://internetofhomethings.com/homethings/?p=530" title="7:07 am" rel="bookmark"><span class="entry-date">13th May 2015</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://internetofhomethings.com/homethings/?author=1" title="View all posts by InternetOfHomeThings">InternetOfHomeThings</a></span> in <a href="http://internetofhomethings.com/homethings/?cat=1" rel="category">All Posts</a>, <a href="http://internetofhomethings.com/homethings/?cat=10" rel="category">ESP8266 : An IoT System on Chip</a>, <a href="http://internetofhomethings.com/homethings/?cat=19" rel="category">Internet of Things</a> | <a href="http://internetofhomethings.com/homethings/?p=530#comments">14 Comments</a>			
+			</div><!--meta data end-->
+			<div class="clear"></div>
+
+						<h3 style="text-align: center;"><strong>Want More Analog Inputs?</strong></h3>
+<p>Do you have a project needing more than one analog input? If your 
+using an ESP8266, that would seem to be a problem as it only offers a 
+single input. Before you commit to using an Arduino, Spark Core, 
+Raspberry PI or other higher priced micro-controller, one with multiple 
+analog inputs, consider this…</p>
+<p><img class="aligncenter wp-image-312 size-medium" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/ESP8266image-300x228.png" alt="ESP8266image" srcset="http://internetofhomethings.com/homethings/wp-content/uploads/2015/03/ESP8266image-300x228.png 300w, http://internetofhomethings.com/homethings/wp-content/uploads/2015/03/ESP8266image.png 997w" sizes="(max-width: 300px) 100vw, 300px" width="300" height="228"></p>
+<p>Adding an&nbsp;8-1 multiplexer chip to your ESP8266-07 or -12 circuit
+ can expand your system capability from one to eight analog inputs. 
+&nbsp;I recently tested this out, using a 74HC4051 CMOS analog 
+multiplexer component I got from an AliExpress supplier.</p>
+<p>The cost?</p>
+<p>$2.19 for 10 chips, or $0.22 per chip.</p>
+<p>They are available in a 16-pin DIP package &nbsp;with 2.54 pitch for easy use with a solder-less breadboard.<a href="http://internetofhomethings.com/homethings/wp-content/uploads/2015/05/muxpic.jpg"><img class="aligncenter wp-image-582 size-thumbnail" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/muxpic-150x150.jpg" alt="muxpic" width="150" height="150"></a>So
+ what’s the downside? Well, selecting one of the 8 analog inputs will 
+require 3 GPIO pins. For many applications, that should not pose a 
+problem when using the ESP8266-07 or -12. These versions have 7 easily 
+accessible GPIO pins available, leaving you with 4 GPIO pins for any 
+digital input or output requirement after adding the 8 analog inputs.</p>
+<p>Here is the circuit I used to test this configuration:</p>
+<p><a href="http://internetofhomethings.com/homethings/wp-content/uploads/2015/05/ESP8266-schematic-amux-test_rev1.jpg"><img class="aligncenter size-full wp-image-1607" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/ESP8266-schematic-amux-test_rev1.jpg" alt="ESP8266-schematic - amux-test_rev1" srcset="http://internetofhomethings.com/homethings/wp-content/uploads/2015/05/ESP8266-schematic-amux-test_rev1.jpg 1315w, http://internetofhomethings.com/homethings/wp-content/uploads/2015/05/ESP8266-schematic-amux-test_rev1-300x133.jpg 300w, http://internetofhomethings.com/homethings/wp-content/uploads/2015/05/ESP8266-schematic-amux-test_rev1-768x341.jpg 768w, http://internetofhomethings.com/homethings/wp-content/uploads/2015/05/ESP8266-schematic-amux-test_rev1-1024x455.jpg 1024w" sizes="(max-width: 1315px) 100vw, 1315px" width="1315" height="584"></a></p>
+<p>The left side of this drawing is the standard circuit I have been 
+using for all of my ESP8266 projects. A typical USB to serial adapter is
+ used when developing and flashing the circuit. When deployed, I use a 
+USB plug with a wall adapter to provide a 5V source, without the Tx/Rx 
+signals.</p>
+<p>The analog multiplexer is controlled by 3 GPIO pins; 14,12 and 13. 
+Setting the states of these 3 digital outputs determine which analog 
+input will be measured.</p>
+<p></p><center>			<table class="wptg-table wptg-comparison-table">
+				<thead class="wptg-thead">
+					<tr>
+						<th class="placeholder wptg-placeholder"></th>
+													<th>GPIO14</th>
+													<th>GPIO12</th>
+													<th>GPIO13</th>
+											</tr>
+				</thead>
+				<tbody class="wptg-tbody">
+									<tr>
+													<td>A0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+											</tr>
+									<tr>
+													<td>A1</td>
+													<td>0</td>
+													<td>0</td>
+													<td>1</td>
+											</tr>
+									<tr>
+													<td>A2</td>
+													<td>0</td>
+													<td>1</td>
+													<td>0</td>
+											</tr>
+									<tr>
+													<td>A3</td>
+													<td>0</td>
+													<td>1</td>
+													<td>1</td>
+											</tr>
+									<tr>
+													<td>A4</td>
+													<td>1</td>
+													<td>0</td>
+													<td>0</td>
+											</tr>
+									<tr>
+													<td>A5</td>
+													<td>1</td>
+													<td>0</td>
+													<td>1</td>
+											</tr>
+									<tr>
+													<td>A6</td>
+													<td>1</td>
+													<td>1</td>
+													<td>0</td>
+											</tr>
+									<tr>
+													<td>A7</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+											</tr>
+								</tbody>
+			</table>
+		</center><br>
+The <a href="https://github.com/internetofhomethings/ESP8266AnalogMux" target="_blank">sketch</a> used to&nbsp;test this circuit was developed using the ESP8266 Arduino IDE.<p></p>
+<p>The serial output loops through each analog input, setting the 
+multiplexer and reading an input every 2.5 seconds. The sketch also 
+behaves as a web server. All 8 analog values can be retrieved in a 
+single JSON string returned from an http GET request.</p>
+<h3 style="text-align: center;"><strong>ESP8266 ADC Performance Evaluation</strong></h3>
+<p>Using this circuit and software, I proceeded to collect some data to 
+characterize the ESP8266 analog input range. First, the multiplexer 
+selector&nbsp;was verified by connecting each input to ground and 
+verifying the Analog count returned was 0. Likewise, each input was 
+connected to 3.3V with a reading of 1024 returned when reading the 
+ESP8266 ADC&nbsp;pin.</p>
+<p>All good so far…</p>
+<p>Then I connected the A0 input to a variable resistor&nbsp;to vary the input voltage voltage.</p>
+<p><a href="http://internetofhomethings.com/homethings/wp-content/uploads/2015/05/ESP8266-schematic-amux-Test-Circuit-updated.jpg"><img class="aligncenter size-full wp-image-1608" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/ESP8266-schematic-amux-Test-Circuit-updated.jpg" alt="ESP8266-schematic - amux-Test-Circuit-updated" srcset="http://internetofhomethings.com/homethings/wp-content/uploads/2015/05/ESP8266-schematic-amux-Test-Circuit-updated.jpg 1438w, http://internetofhomethings.com/homethings/wp-content/uploads/2015/05/ESP8266-schematic-amux-Test-Circuit-updated-300x123.jpg 300w, http://internetofhomethings.com/homethings/wp-content/uploads/2015/05/ESP8266-schematic-amux-Test-Circuit-updated-768x314.jpg 768w, http://internetofhomethings.com/homethings/wp-content/uploads/2015/05/ESP8266-schematic-amux-Test-Circuit-updated-1024x419.jpg 1024w" sizes="(max-width: 1438px) 100vw, 1438px" width="1438" height="588"></a></p>
+<p>At the same time, an external Digital Multimeter (DMM) was used to 
+monitor the voltage applied to the ESP ADC input via the multiplexer. 
+For each voltage setting, I recorded the DMM reading and the ADC count 
+returned from the ESP8266. It would have been great to have a calibrated
+ bus controlled DMM to automate this process, but for the purpose of 
+this DIY home project, I simply entered the values into an excel 
+spreadsheet manually.</p>
+<p>Thirty-seven voltage settings were applied in the range between 0.2V 
+and 1.2V. Any voltage below 0.2V returned a 0 bit count while voltages 
+above 1.2V returned 1024. I observed approximately 10 values returned 
+from the ESP8266 for each voltage applied and recorded the high and low 
+bit count readings for these measurements. The average of the high and 
+low reading was then used to chart the results.</p>
+<p><a href="http://internetofhomethings.com/homethings/wp-content/uploads/2015/05/graph.jpg"><img class="aligncenter size-full wp-image-586" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/graph.jpg" alt="ESP8266 ADC voltage vs bit count" srcset="http://internetofhomethings.com/homethings/wp-content/uploads/2015/05/graph.jpg 733w, http://internetofhomethings.com/homethings/wp-content/uploads/2015/05/graph-300x182.jpg 300w" sizes="(max-width: 733px) 100vw, 733px" width="733" height="444"></a></p>
+<p>As you can see, the results were reasonably linear. But there is 
+compression&nbsp;at the voltage extremes. For practical use, I would not
+ use the non-linear ends, limiting the voltage swing from&nbsp;0.25 to 
+1.15 V, a 0.9 V range.</p>
+<p>The data collected can be reduced to a “best fit” equation. This 
+would provide a method of converting the raw ADC value count to a 
+voltage. Ideally, a data point should be collected for each ADC count 
+value. The equipment I used for this exercise&nbsp;was not calibrated or
+ accurate enough to do this. Given 
+these&nbsp;uncertainties&nbsp;in&nbsp;my test setup, I am not sure if 
+the variances I observed for consecutive readings…and they did vary 
+somewhat…was result of the input voltage source or the ESP8266 ADC.</p>
+<p>Still…with the data I had collected, the formula was determined to be:</p>
+<p style="text-align: center;"><strong>Vain = (0.94* ADCcount + 200) mV</strong></p>
+<p style="text-align: left;">The slope was determined by dividing the 
+voltage difference by the ADC count&nbsp;&nbsp;difference at each end of
+ the voltage range. And 200 mV, the intercept, is the voltage when the 
+ADC started reporting 0 for the count.</p>
+<p style="text-align: left;">While there does not appear to be a 
+definitive specification, this is consistent&nbsp;with what I have read 
+regarding the ESP8266. The 10-bit ADC resolution is supposed to be 
+approximately 1 mV with a 1 V range.</p>
+<h3 style="text-align: center;"><strong>Resolving Sensor Incompatibilities</strong></h3>
+<p style="text-align: left;">So what can you do if your sensor range is outside the ESP8266 0.2 to 1.2 V&nbsp;window?</p>
+<p style="text-align: left;">Scaling of course.</p>
+<p style="text-align: left;">This can be accomplished passively, using a
+ resistor divider, or actively, with the addition of an op-amp. The 
+interface of choice would be an active op-amp based circuit.</p>
+<p style="text-align: left;">For example, suppose your sensor has a 0-5V
+ range. This would need to be scaled to fit in the ESP8266 0.2 to 1.2 V 
+input range. Obviously, resolution will be compromised as we go from a 
+larger range to a smaller one, but it can be done. And with a single 
+power supply.</p>
+<p style="text-align: left;"><a href="http://internetofhomethings.com/homethings/wp-content/uploads/2015/05/LevelShifter.jpg"><img class="aligncenter size-large wp-image-591" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/LevelShifter-1024x692.jpg" alt="ESP8266 Analog Input Voltage Level Shifter" srcset="http://internetofhomethings.com/homethings/wp-content/uploads/2015/05/LevelShifter-1024x692.jpg 1024w, http://internetofhomethings.com/homethings/wp-content/uploads/2015/05/LevelShifter-300x203.jpg 300w" sizes="(max-width: 620px) 100vw, 620px" width="620" height="419"></a></p>
+<p style="text-align: left;">Resistor values calculated <a href="http://www.daycounter.com/Calculators/Op-Amp/NonInverting-Op-Amp-Resistor-Calculator.phtml" target="_blank">here</a>.
+ The 24K/1K resistor divider supplies the 0.2V offset with the gain set 
+for the 1.15 V output with a 5V maximum input applied. This circuit 
+would need to be modified for your specific sensor voltage range.</p>
+<h3 style="text-align: center;"><strong>In summary</strong></h3>
+<p style="text-align: left;">So there you have it. Eight analog inputs measured using a single&nbsp;ESP8266 SoC. Possible simply by adding a 22 cent chip.</p>
+<p style="text-align: left;">And I got to mention one more option. Just in case you want even more…</p>
+<p style="text-align: left;">A 16 channel version&nbsp;of the multiplexer&nbsp;is also available (74HCT4067). That’s a whole lot of&nbsp;analog!</p>
+<p style="text-align: left;">I hope you find this information useful.</p>
+<p style="text-align: left;">
+</p><div class="pvc_clear"></div>
+<p id="pvc_stats_530" class="pvc_stats pvc_load_by_ajax_update" element-id="530"><span>
+	
+		14799 total views,
+		
+			41 views today
+		
+	
+	</span></p>
+<div class="pvc_clear"></div>
+<h5 style="color:black;margin-bottom:-1px;font-weight:bold;">Share This:</h5><div class="synved-social-container synved-social-container-share" style="text-align: left"><a class="synved-social-button synved-social-button-share synved-social-size-48 synved-social-resolution-normal synved-social-provider-facebook nolightbox" data-provider="facebook" target="_blank" rel="nofollow" title="Share on Facebook" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Finternetofhomethings.com%2Fhomethings%2F%3Fp%3D530&amp;t=8%20ESP8266%20analog%20inputs%20for%2022%20cents&amp;s=100&amp;p[url]=http%3A%2F%2Finternetofhomethings.com%2Fhomethings%2F%3Fp%3D530&amp;p[images][0]=http%3A%2F%2Finternetofhomethings.com%2Fhomethings%2Fwp-content%2Fuploads%2F2015%2F03%2FESP8266image-300x228.png&amp;p[title]=8%20ESP8266%20analog%20inputs%20for%2022%20cents" style="font-size: 0px; width:48px;height:48px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="Facebook" title="Share on Facebook" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:48px;height:48px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/facebook_002.png" width="48" height="48"></a><a class="synved-social-button synved-social-button-share synved-social-size-48 synved-social-resolution-normal synved-social-provider-twitter nolightbox" data-provider="twitter" target="_blank" rel="nofollow" title="Share on Twitter" href="http://twitter.com/share?url=http%3A%2F%2Finternetofhomethings.com%2Fhomethings%2F%3Fp%3D530&amp;text=Hey%20check%20this%20out" style="font-size: 0px; width:48px;height:48px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="twitter" title="Share on Twitter" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:48px;height:48px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/twitter_003.png" width="48" height="48"></a><a class="synved-social-button synved-social-button-share synved-social-size-48 synved-social-resolution-normal synved-social-provider-google_plus nolightbox" data-provider="google_plus" target="_blank" rel="nofollow" title="Share on Google+" href="https://plus.google.com/share?url=http%3A%2F%2Finternetofhomethings.com%2Fhomethings%2F%3Fp%3D530" style="font-size: 0px; width:48px;height:48px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="google_plus" title="Share on Google+" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:48px;height:48px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/google_plus_003.png" width="48" height="48"></a><a class="synved-social-button synved-social-button-share synved-social-size-48 synved-social-resolution-normal synved-social-provider-reddit nolightbox" data-provider="reddit" target="_blank" rel="nofollow" title="Share on Reddit" href="http://www.reddit.com/submit?url=http%3A%2F%2Finternetofhomethings.com%2Fhomethings%2F%3Fp%3D530&amp;title=8%20ESP8266%20analog%20inputs%20for%2022%20cents" style="font-size: 0px; width:48px;height:48px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="reddit" title="Share on Reddit" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:48px;height:48px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/reddit_002.png" width="48" height="48"></a><a class="synved-social-button synved-social-button-share synved-social-size-48 synved-social-resolution-normal synved-social-provider-pinterest nolightbox" data-provider="pinterest" target="_blank" rel="nofollow" title="Pin it with Pinterest" href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Finternetofhomethings.com%2Fhomethings%2F%3Fp%3D530&amp;media=http%3A%2F%2Finternetofhomethings.com%2Fhomethings%2Fwp-content%2Fuploads%2F2015%2F03%2FESP8266image-300x228.png&amp;description=8%20ESP8266%20analog%20inputs%20for%2022%20cents" style="font-size: 0px; width:48px;height:48px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="pinterest" title="Pin it with Pinterest" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:48px;height:48px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/pinterest.png" width="48" height="48"></a><a class="synved-social-button synved-social-button-share synved-social-size-48 synved-social-resolution-normal synved-social-provider-linkedin nolightbox" data-provider="linkedin" target="_blank" rel="nofollow" title="Share on Linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Finternetofhomethings.com%2Fhomethings%2F%3Fp%3D530&amp;title=8%20ESP8266%20analog%20inputs%20for%2022%20cents" style="font-size: 0px; width:48px;height:48px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="linkedin" title="Share on Linkedin" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:48px;height:48px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/linkedin_002.png" width="48" height="48"></a><a class="synved-social-button synved-social-button-share synved-social-size-48 synved-social-resolution-normal synved-social-provider-tumblr nolightbox" data-provider="tumblr" target="_blank" rel="nofollow" title="Share on tumblr" href="http://tumblr.com/share?s=&amp;v=3&amp;t=8%20ESP8266%20analog%20inputs%20for%2022%20cents&amp;u=http%3A%2F%2Finternetofhomethings.com%2Fhomethings%2F%3Fp%3D530" style="font-size: 0px; width:48px;height:48px;margin:0;margin-bottom:8px;"><img alt="tumblr" title="Share on tumblr" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:48px;height:48px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/tumblr_002.png" width="48" height="48"></a><a class="synved-social-button synved-social-button-share synved-social-size-48 synved-social-resolution-hidef synved-social-provider-facebook nolightbox" data-provider="facebook" target="_blank" rel="nofollow" title="Share on Facebook" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Finternetofhomethings.com%2Fhomethings%2F%3Fp%3D530&amp;t=8%20ESP8266%20analog%20inputs%20for%2022%20cents&amp;s=100&amp;p[url]=http%3A%2F%2Finternetofhomethings.com%2Fhomethings%2F%3Fp%3D530&amp;p[images][0]=http%3A%2F%2Finternetofhomethings.com%2Fhomethings%2Fwp-content%2Fuploads%2F2015%2F03%2FESP8266image-300x228.png&amp;p[title]=8%20ESP8266%20analog%20inputs%20for%2022%20cents" style="font-size: 0px; width:48px;height:48px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="Facebook" title="Share on Facebook" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:48px;height:48px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/facebook.png" width="48" height="48"></a><a class="synved-social-button synved-social-button-share synved-social-size-48 synved-social-resolution-hidef synved-social-provider-twitter nolightbox" data-provider="twitter" target="_blank" rel="nofollow" title="Share on Twitter" href="http://twitter.com/share?url=http%3A%2F%2Finternetofhomethings.com%2Fhomethings%2F%3Fp%3D530&amp;text=Hey%20check%20this%20out" style="font-size: 0px; width:48px;height:48px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="twitter" title="Share on Twitter" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:48px;height:48px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/twitter_002.png" width="48" height="48"></a><a class="synved-social-button synved-social-button-share synved-social-size-48 synved-social-resolution-hidef synved-social-provider-google_plus nolightbox" data-provider="google_plus" target="_blank" rel="nofollow" title="Share on Google+" href="https://plus.google.com/share?url=http%3A%2F%2Finternetofhomethings.com%2Fhomethings%2F%3Fp%3D530" style="font-size: 0px; width:48px;height:48px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="google_plus" title="Share on Google+" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:48px;height:48px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/google_plus_002.png" width="48" height="48"></a><a class="synved-social-button synved-social-button-share synved-social-size-48 synved-social-resolution-hidef synved-social-provider-reddit nolightbox" data-provider="reddit" target="_blank" rel="nofollow" title="Share on Reddit" href="http://www.reddit.com/submit?url=http%3A%2F%2Finternetofhomethings.com%2Fhomethings%2F%3Fp%3D530&amp;title=8%20ESP8266%20analog%20inputs%20for%2022%20cents" style="font-size: 0px; width:48px;height:48px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="reddit" title="Share on Reddit" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:48px;height:48px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/reddit.png" width="48" height="48"></a><a class="synved-social-button synved-social-button-share synved-social-size-48 synved-social-resolution-hidef synved-social-provider-pinterest nolightbox" data-provider="pinterest" target="_blank" rel="nofollow" title="Pin it with Pinterest" href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Finternetofhomethings.com%2Fhomethings%2F%3Fp%3D530&amp;media=http%3A%2F%2Finternetofhomethings.com%2Fhomethings%2Fwp-content%2Fuploads%2F2015%2F03%2FESP8266image-300x228.png&amp;description=8%20ESP8266%20analog%20inputs%20for%2022%20cents" style="font-size: 0px; width:48px;height:48px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="pinterest" title="Pin it with Pinterest" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:48px;height:48px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/pinterest_003.png" width="48" height="48"></a><a class="synved-social-button synved-social-button-share synved-social-size-48 synved-social-resolution-hidef synved-social-provider-linkedin nolightbox" data-provider="linkedin" target="_blank" rel="nofollow" title="Share on Linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Finternetofhomethings.com%2Fhomethings%2F%3Fp%3D530&amp;title=8%20ESP8266%20analog%20inputs%20for%2022%20cents" style="font-size: 0px; width:48px;height:48px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="linkedin" title="Share on Linkedin" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:48px;height:48px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/linkedin.png" width="48" height="48"></a><a class="synved-social-button synved-social-button-share synved-social-size-48 synved-social-resolution-hidef synved-social-provider-tumblr nolightbox" data-provider="tumblr" target="_blank" rel="nofollow" title="Share on tumblr" href="http://tumblr.com/share?s=&amp;v=3&amp;t=8%20ESP8266%20analog%20inputs%20for%2022%20cents&amp;u=http%3A%2F%2Finternetofhomethings.com%2Fhomethings%2F%3Fp%3D530" style="font-size: 0px; width:48px;height:48px;margin:0;margin-bottom:8px;"><img alt="tumblr" title="Share on tumblr" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:48px;height:48px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/tumblr.png" width="48" height="48"></a></div>						<div class="clear"></div>
+									
+						Social tagging: <a href="http://internetofhomethings.com/homethings/?tag=esp8266" rel="tag">ESP8266</a> &gt; <a href="http://internetofhomethings.com/homethings/?tag=expand-esp8266-capability" rel="tag">Expand ESP8266 capability</a> &gt; <a href="http://internetofhomethings.com/homethings/?tag=more-esp8266-analog-inputs" rel="tag">More ESP8266 Analog Inputs</a>						
+				 <nav id="nav-single"> <span class="nav-previous">
+            <a href="http://internetofhomethings.com/homethings/?p=555" rel="prev"><span class="meta-nav">←</span> Previous Post </a>            </span> <span class="nav-next">
+            <a href="http://internetofhomethings.com/homethings/?p=605" rel="next">Next Post <span class="meta-nav">→</span></a>            </span> </nav>
+						
+					</div><!--post-entry end-->
+					
+								<div id="comments">
+
+
+			<h3 id="comments-title">14 Responses to 8 ESP8266 analog inputs for 22 cents</h3>
+
+
+			<ol class="commentlist">
+						<li class="comment even thread-even depth-1" id="comment-198">
+				<div id="div-comment-198" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/968751766086172121961ff94dc38702.jpeg" srcset="http://0.gravatar.com/avatar/968751766086172121961ff94dc38702?s=64&amp;d=mm&amp;r=g 2x" class="avatar avatar-32 photo grav-hashed grav-hijack" id="grav-968751766086172121961ff94dc38702-0" width="32" height="32">			<cite class="fn"><a href="http://tweakers.net/gallery/358483" rel="external nofollow" class="url">Mr. Breaker</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://internetofhomethings.com/homethings/?p=530#comment-198">
+			31st May 2015 at 11:55 am</a>		</div>
+
+		<p>Hi,</p>
+<p>Nice work!</p>
+<p>Can you provide the used header files? And on which version of Arduino IDE did you compile?</p>
+<p>Best Regards,</p>
+<p>Mr. Breaker</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://internetofhomethings.com/homethings/?p=530&amp;replytocom=198#respond" onclick='return addComment.moveForm( "div-comment-198", "198", "respond", "530" )' aria-label="Reply to Mr. Breaker">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-dave-st-aubin bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-213">
+				<div id="div-comment-213" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="facebook-profile-picture" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/picture.jpeg" class="avatar avatar-32 photo" width="32" height="32">			<cite class="fn">Dave St. Aubin</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://internetofhomethings.com/homethings/?p=530#comment-213">
+			3rd June 2015 at 7:36 am</a>		</div>
+
+		<p>The sketch was compiled using the Arduino IDE Version 1.6.1. It should also compile with the latest version. </p>
+<p>I have added the header and source files for the UtilityFunctions library to the <a href="https://github.com/internetofhomethings/ESP8266AnalogMux/tree/master" rel="nofollow">Github repository</a>.</p>
+<p>I also deleted the following extraneous header files from the sketch; these were left-overs from another project:</p>
+<p>DHT.h<br>
+Adafruit_BMP085.h<br>
+Wire.h<br>
+OneWire.h</p>
+<p>The ESP8266WiFi.h file is included with the Arduino IDE.</p>
+<p>And finally, the user_interface.h file is included with the Espressif
+ SDK. I am currently using SDK version 1.0.1 dated 24 April 2015. There 
+are later revisions, but I have had issues with them. The <a href="https://github.com/esp8266/esp8266-wiki/tree/master/sdk" rel="nofollow">24 April version</a> is the latest version that i have found to be reliable and stable.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://internetofhomethings.com/homethings/?p=530&amp;replytocom=213#respond" onclick='return addComment.moveForm( "div-comment-213", "213", "respond", "530" )' aria-label="Reply to Dave St. Aubin">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-4643">
+				<div id="div-comment-4643" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/f69bbe8612f346dd8ba44a920652f9ea.jpeg" srcset="http://0.gravatar.com/avatar/f69bbe8612f346dd8ba44a920652f9ea?s=64&amp;d=mm&amp;r=g 2x" class="avatar avatar-32 photo grav-hashed grav-hijack" id="grav-f69bbe8612f346dd8ba44a920652f9ea-0" width="32" height="32">			<cite class="fn"><a href="http://canuuploadyourluascript/?" rel="external nofollow" class="url">hagai</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://internetofhomethings.com/homethings/?p=530#comment-4643">
+			26th September 2015 at 1:32 pm</a>		</div>
+
+		<p>i build the adc but i dont success to read the data from the nodemcu</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://internetofhomethings.com/homethings/?p=530&amp;replytocom=4643#respond" onclick='return addComment.moveForm( "div-comment-4643", "4643", "respond", "530" )' aria-label="Reply to hagai">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-dave-st-aubin bypostauthor odd alt depth-2" id="comment-4644">
+				<div id="div-comment-4644" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="facebook-profile-picture" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/picture.jpeg" class="avatar avatar-32 photo" width="32" height="32">			<cite class="fn">InternetOfHomeThings</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://internetofhomethings.com/homethings/?p=530#comment-4644">
+			26th September 2015 at 2:34 pm</a>		</div>
+
+		<p>The circuit was tested using the Arduino IDE. The sketch link is provided in the post (click on “sketch”). </p>
+<p>I am not a big fan of lua scripts and have not created one for this 
+circuit. If you are determined to use lua, send me your script and I 
+would be happy to review it and provide some feedback.</p>
+<p>I highly recommend you use the Arduino IDE or EspressIf SDK for your 
+ESP8266 code development. You surely would be pleased with the superior 
+results vs NodeMCU lua.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://internetofhomethings.com/homethings/?p=530&amp;replytocom=4644#respond" onclick='return addComment.moveForm( "div-comment-4644", "4644", "respond", "530" )' aria-label="Reply to InternetOfHomeThings">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-5477">
+				<div id="div-comment-5477" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/6521835d701ac1b3675c12d1786f14ba.jpeg" srcset="http://0.gravatar.com/avatar/6521835d701ac1b3675c12d1786f14ba?s=64&amp;d=mm&amp;r=g 2x" class="avatar avatar-32 photo grav-hashed grav-hijack" id="grav-6521835d701ac1b3675c12d1786f14ba-0" width="32" height="32">			<cite class="fn">Smith</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://internetofhomethings.com/homethings/?p=530#comment-5477">
+			29th October 2015 at 8:29 am</a>		</div>
+
+		<p>Is there any way to send the data through  MQTT?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://internetofhomethings.com/homethings/?p=530&amp;replytocom=5477#respond" onclick='return addComment.moveForm( "div-comment-5477", "5477", "respond", "530" )' aria-label="Reply to Smith">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-dave-st-aubin bypostauthor odd alt depth-2" id="comment-5488">
+				<div id="div-comment-5488" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="facebook-profile-picture" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/picture.jpeg" class="avatar avatar-32 photo" width="32" height="32">			<cite class="fn">InternetOfHomeThings</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://internetofhomethings.com/homethings/?p=530#comment-5488">
+			29th October 2015 at 2:34 pm</a>		</div>
+
+		<p>Of course your ESP8266 Arduino IDE code  can interface with a MQTT broker. There are many code examples on-line Here is one:</p>
+<p>https://gist.github.com/igrr/7f7e7973366fc01d6393</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://internetofhomethings.com/homethings/?p=530&amp;replytocom=5488#respond" onclick='return addComment.moveForm( "div-comment-5488", "5488", "respond", "530" )' aria-label="Reply to InternetOfHomeThings">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-dave-st-aubin bypostauthor even thread-even depth-1" id="comment-6051">
+				<div id="div-comment-6051" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="facebook-profile-picture" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/picture.jpeg" class="avatar avatar-32 photo" width="32" height="32">			<cite class="fn">InternetOfHomeThings</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://internetofhomethings.com/homethings/?p=530#comment-6051">
+			16th November 2015 at 3:19 pm</a>		</div>
+
+		<p>Here is my recent post which includes an ESP8266 MQTT example sketch. http://wp.me/p5NRQ8-i5</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://internetofhomethings.com/homethings/?p=530&amp;replytocom=6051#respond" onclick='return addComment.moveForm( "div-comment-6051", "6051", "respond", "530" )' aria-label="Reply to InternetOfHomeThings">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-8077">
+				<div id="div-comment-8077" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/2ebf9f60bf95b98349c44c186b90f12f.jpeg" srcset="http://2.gravatar.com/avatar/2ebf9f60bf95b98349c44c186b90f12f?s=64&amp;d=mm&amp;r=g 2x" class="avatar avatar-32 photo grav-hashed grav-hijack" id="grav-2ebf9f60bf95b98349c44c186b90f12f-0" width="32" height="32">			<cite class="fn">fzane</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://internetofhomethings.com/homethings/?p=530#comment-8077">
+			2nd April 2016 at 8:45 am</a>		</div>
+
+		<p>can you please put the pure code to read all sensors without the json stuff? thank you very much.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://internetofhomethings.com/homethings/?p=530&amp;replytocom=8077#respond" onclick='return addComment.moveForm( "div-comment-8077", "8077", "respond", "530" )' aria-label="Reply to fzane">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-dave-st-aubin bypostauthor even depth-2" id="comment-8128">
+				<div id="div-comment-8128" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="facebook-profile-picture" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/picture.jpeg" class="avatar avatar-32 photo" width="32" height="32">			<cite class="fn">InternetOfHomeThings</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://internetofhomethings.com/homethings/?p=530#comment-8128">
+			6th April 2016 at 12:39 pm</a>		</div>
+
+		<p>Thanks for your comment. While it is not clear exactly what you are
+ seeking, the sketch had been revised to return, on request, the raw 
+analog value of a single selected channel. You should be able to 
+customize the sketch to your exact requirements from what is in the 
+revised sketch. It is on GitHub at:</p>
+<p>https://github.com/internetofhomethings/ESP8266AnalogMux</p>
+<p>In the sketch provided, IP = 192.168.0.132 and Port = 9701. You can 
+change these to your needs in the sketch. With this, you can now 
+retrieve the raw analog value (0-1023) for each of the 8 individual 
+inputs (0-7), without any JSON:</p>
+<p>http://192.168.0.132:9701/ain/0<br>
+http://192.168.0.132:9701/ain/1<br>
+http://192.168.0.132:9701/ain/2<br>
+http://192.168.0.132:9701/ain/3<br>
+http://192.168.0.132:9701/ain/4<br>
+http://192.168.0.132:9701/ain/5<br>
+http://192.168.0.132:9701/ain/6<br>
+http://192.168.0.132:9701/ain/7</p>
+<p>Hope you find this sketch useful.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://internetofhomethings.com/homethings/?p=530&amp;replytocom=8128#respond" onclick='return addComment.moveForm( "div-comment-8128", "8128", "respond", "530" )' aria-label="Reply to InternetOfHomeThings">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-8277">
+				<div id="div-comment-8277" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/a595fee921a4ee0fa7d75cde679d5d77.jpeg" srcset="http://1.gravatar.com/avatar/a595fee921a4ee0fa7d75cde679d5d77?s=64&amp;d=mm&amp;r=g 2x" class="avatar avatar-32 photo grav-hashed grav-hijack" id="grav-a595fee921a4ee0fa7d75cde679d5d77-0" width="32" height="32">			<cite class="fn"><a href="http://internetofhomethings.com/" rel="external nofollow" class="url">Dave St. Aubin</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://internetofhomethings.com/homethings/?p=530#comment-8277">
+			27th April 2016 at 7:32 pm</a>		</div>
+
+		<p>By the way, I have seen that error message before. It occured in my
+ case when my mySQL server was not running on my host. You might want to
+ check that possibility.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://internetofhomethings.com/homethings/?p=530&amp;replytocom=8277#respond" onclick='return addComment.moveForm( "div-comment-8277", "8277", "respond", "530" )' aria-label="Reply to Dave St. Aubin">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-8309">
+				<div id="div-comment-8309" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/b969018dba4cb56f4a6782d51e41309c.jpeg" srcset="http://2.gravatar.com/avatar/b969018dba4cb56f4a6782d51e41309c?s=64&amp;d=mm&amp;r=g 2x" class="avatar avatar-32 photo grav-hashed grav-hijack" id="grav-b969018dba4cb56f4a6782d51e41309c-0" width="32" height="32">			<cite class="fn">Andy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://internetofhomethings.com/homethings/?p=530#comment-8309">
+			30th April 2016 at 12:24 am</a>		</div>
+
+		<p>Hi,</p>
+<p>there is an error in the picture “ESP8266-schematic-amux-1024×477” GPIO14 and GPIO13 has to be swapped.</p>
+<p>Regards, Andy</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://internetofhomethings.com/homethings/?p=530&amp;replytocom=8309#respond" onclick='return addComment.moveForm( "div-comment-8309", "8309", "respond", "530" )' aria-label="Reply to Andy">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-dave-st-aubin bypostauthor odd alt depth-2" id="comment-8353">
+				<div id="div-comment-8353" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="facebook-profile-picture" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/picture.jpeg" class="avatar avatar-32 photo" width="32" height="32">			<cite class="fn">InternetOfHomeThings</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://internetofhomethings.com/homethings/?p=530#comment-8353">
+			2nd May 2016 at 10:38 am</a>		</div>
+
+		<p>Thanks for pointing out the error in the schematic Andy. I hope it 
+did not through off your efforts too much. The schematics have been 
+updated.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://internetofhomethings.com/homethings/?p=530&amp;replytocom=8353#respond" onclick='return addComment.moveForm( "div-comment-8353", "8353", "respond", "530" )' aria-label="Reply to InternetOfHomeThings">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-10155">
+				<div id="div-comment-10155" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/8e9baea8a070f68326514c84fbf44403.jpeg" srcset="http://2.gravatar.com/avatar/8e9baea8a070f68326514c84fbf44403?s=64&amp;d=mm&amp;r=g 2x" class="avatar avatar-32 photo grav-hashed grav-hijack" id="grav-8e9baea8a070f68326514c84fbf44403-0" width="32" height="32">			<cite class="fn">Guest</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://internetofhomethings.com/homethings/?p=530#comment-10155">
+			29th September 2016 at 4:03 am</a>		</div>
+
+		<p>Hi,<br>
+Nice work!<br>
+In the schematic the 74HCT4051 is drawn. Please keep in mind that the 
+HCT types are out of range for the Vcc 3,3 V. (May be they can work, but
+ they must not) Instead you can use the HC types.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://internetofhomethings.com/homethings/?p=530&amp;replytocom=10155#respond" onclick='return addComment.moveForm( "div-comment-10155", "10155", "respond", "530" )' aria-label="Reply to Guest">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-dave-st-aubin bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-8274">
+				<div id="div-comment-8274" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="facebook-profile-picture" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/picture.jpeg" class="avatar avatar-32 photo" width="32" height="32">			<cite class="fn">InternetOfHomeThings</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://internetofhomethings.com/homethings/?p=530#comment-8274">
+			27th April 2016 at 8:54 am</a>		</div>
+
+		<p>The link you provided did not work. It returned “could not connect 
+to database”. It had to be removed from your comment. Please fix the 
+link, perhaps it only works when connected to your LAN, and reply here 
+if you would like to share something regarding extra channels using a 
+MUX IC. Thanks!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://internetofhomethings.com/homethings/?p=530&amp;replytocom=8274#respond" onclick='return addComment.moveForm( "div-comment-8274", "8274", "respond", "530" )' aria-label="Reply to InternetOfHomeThings">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+			</ol>
+		
+	        <h3 id="pings">Trackbacks/Pingbacks</h3>
+    <ol class="commentlist">
+    	<li id="comment-7436"><a href="http://jimb.cc/2016/02/09/esp8266-analogue-input-expansion/" rel="external nofollow" class="url">ESP8266 Analogue input expansion | Jim's Blog</a></li><!-- #comment-## -->
+	<li id="comment-8195">Remote Power Monitoring system AC or DC current measurements | hilo90mhz</li><!-- #comment-## -->
+	<li id="comment-9446"><a href="http://hilo90mhz.com/remote-power-monitoring-system-ac-or-dc-current-measurements/" rel="external nofollow" class="url">Remote Power Monitoring system AC or DC current measurements – Hilo90mhz</a></li><!-- #comment-## -->
+    </ol>
+
+    
+
+
+				<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://internetofhomethings.com/homethings/?p=530#respond" style="display:none;">Cancel reply</a></small></h3>				<form action="http://internetofhomethings.com/homethings/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+					<p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" size="30" maxlength="245" aria-required="true" required="required" type="text"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" size="30" maxlength="100" aria-describedby="email-notes" aria-required="true" required="required" type="text"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" size="30" maxlength="200" type="text"></p>
+<link rel="stylesheet" type="text/css" href="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/comment_button.css"><script type="text/javascript">
+<!--
+EasyCodeLanguageList='CSS,HTML,JavaScript,PHP'.split(',');
+function ECshowCommentWindow(){
+	o = document.getElementById('easycode_comment_insert');
+	s = o.className;
+	if(s=='easycode_hide_window'){
+		o.className='easycode_show_window';
+	}else{
+		o.className='easycode_hide_window';
+	}
+}
+//-->
+</script>
+<div id="easycode_comment_insert" class="easycode_hide_window">
+	<a id="easycode_comment_button" href="javascript:ECshowCommentWindow();" title="Insert Code'"></a>
+	<iframe src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/comment_button_frame.html" scrolling="no" marginheight="0" marginwidth="0" frameborder="0"></iframe>
+</div>
+<div style="height:25px;width:0px;"></div>
+
+
+<p class="form-submit"><input name="submit" id="submit" class="submit" value="Post Comment" type="submit"> <input name="comment_post_ID" value="530" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p><p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="01c67daab7" type="hidden"></p><p class="comment-subscription-form"><input name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;" type="checkbox"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p><p class="comment-subscription-form"><input name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;" type="checkbox"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p><p style="display: none;"></p>				<input id="ak_js" name="ak_js" value="1475613732029" type="hidden"></form>
+					</div><!-- #respond -->
+		
+</div><!-- #comments -->
+
+	</div> <!--left-col end-->
+</div> <!--column end-->
+
+<!--right-col-->
+		<div class="large-4 columns">
+			
+				<!--sidebar-->
+				<div id="sidebar">
+			
+			<ul class="xoxo">
+
+<li id="search-2" class="widget-container widget_search"><h3 class="widget-title">Looking for something?</h3><!--search form-->
+				
+				    <form method="get" id="search" action="http://internetofhomethings.com/homethings">
+
+					<div>
+					               		<input value="search this site" name="s" id="s" onfocus="if(this.value=='search this site'){this.value=''};" onblur="if(this.value==''){this.value='search this site'};" tabindex="2" type="text">
+               		<input id="searchsubmit" value="" type="submit">
+                	
+					</div>
+               		</form></li><li id="text-8" class="widget-container widget_text"><h3 class="widget-title">List All Post</h3>			<div class="textwidget"><a href="http://internetofhomethings.com/homethings/?page_id=207">Just The Titles</a></div>
+		</li><li id="categories-2" class="widget-container widget_categories"><h3 class="widget-title">Post Categories</h3><label class="screen-reader-text" for="cat">Post Categories</label><select name="cat" id="cat" class="postform">
+	<option value="-1" selected="selected">Select Category</option>
+	<option class="level-0" value="1">All Posts&nbsp;&nbsp;(58)</option>
+	<option class="level-0" value="64">Arduino&nbsp;&nbsp;(7)</option>
+	<option class="level-0" value="10">ESP8266 : An IoT System on Chip&nbsp;&nbsp;(38)</option>
+	<option class="level-0" value="19">Internet of Things&nbsp;&nbsp;(36)</option>
+	<option class="level-0" value="111">MQTT&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="4">Video Editing&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="3">Web Coding Tips&nbsp;&nbsp;(11)</option>
+	<option class="level-0" value="136">Web Security&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="132">Web Server&nbsp;&nbsp;(3)</option>
+</select>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+	var dropdown = document.getElementById( "cat" );
+	function onCatChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
+			location.href = "http://internetofhomethings.com/homethings/?cat=" + dropdown.options[ dropdown.selectedIndex ].value;
+		}
+	}
+	dropdown.onchange = onCatChange;
+})();
+/* ]]> */
+</script>
+
+</li><li id="archives-2" class="widget-container widget_archive"><h3 class="widget-title">Archived Posts</h3>		<label class="screen-reader-text" for="archives-dropdown-2">Archived Posts</label>
+		<select id="archives-dropdown-2" name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;">
+			
+			<option value="" selected="selected">Select Month</option>
+				<option value="http://internetofhomethings.com/homethings/?m=201609"> September 2016 </option>
+	<option value="http://internetofhomethings.com/homethings/?m=201607"> July 2016 </option>
+	<option value="http://internetofhomethings.com/homethings/?m=201605"> May 2016 </option>
+	<option value="http://internetofhomethings.com/homethings/?m=201604"> April 2016 </option>
+	<option value="http://internetofhomethings.com/homethings/?m=201603"> March 2016 </option>
+	<option value="http://internetofhomethings.com/homethings/?m=201602"> February 2016 </option>
+	<option value="http://internetofhomethings.com/homethings/?m=201601"> January 2016 </option>
+	<option value="http://internetofhomethings.com/homethings/?m=201512"> December 2015 </option>
+	<option value="http://internetofhomethings.com/homethings/?m=201511"> November 2015 </option>
+	<option value="http://internetofhomethings.com/homethings/?m=201510"> October 2015 </option>
+	<option value="http://internetofhomethings.com/homethings/?m=201509"> September 2015 </option>
+	<option value="http://internetofhomethings.com/homethings/?m=201508"> August 2015 </option>
+	<option value="http://internetofhomethings.com/homethings/?m=201507"> July 2015 </option>
+	<option value="http://internetofhomethings.com/homethings/?m=201506"> June 2015 </option>
+	<option value="http://internetofhomethings.com/homethings/?m=201505"> May 2015 </option>
+	<option value="http://internetofhomethings.com/homethings/?m=201504"> April 2015 </option>
+	<option value="http://internetofhomethings.com/homethings/?m=201503"> March 2015 </option>
+	<option value="http://internetofhomethings.com/homethings/?m=201502"> February 2015 </option>
+
+		</select>
+		</li><li id="tag_cloud-2" class="widget-container widget_tag_cloud"><h3 class="widget-title">Website Tag Cloud</h3><div class="tagcloud"><a href="http://internetofhomethings.com/homethings/?tag=android" class="tag-link-45 tag-link-position-1" title="1 topic" style="font-size: 8pt;">android</a>
+<a href="http://internetofhomethings.com/homethings/?tag=android-app" class="tag-link-42 tag-link-position-2" title="1 topic" style="font-size: 8pt;">Android App</a>
+<a href="http://internetofhomethings.com/homethings/?tag=android-app-development" class="tag-link-44 tag-link-position-3" title="1 topic" style="font-size: 8pt;">android app development</a>
+<a href="http://internetofhomethings.com/homethings/?tag=app-inventor-configurable-mqtt" class="tag-link-109 tag-link-position-4" title="2 topics" style="font-size: 14.3pt;">App Inventor configurable MQTT</a>
+<a href="http://internetofhomethings.com/homethings/?tag=app-inventor-mqtt" class="tag-link-106 tag-link-position-5" title="2 topics" style="font-size: 14.3pt;">App Inventor MQTT</a>
+<a href="http://internetofhomethings.com/homethings/?tag=bootstrap" class="tag-link-7 tag-link-position-6" title="1 topic" style="font-size: 8pt;">Bootstrap</a>
+<a href="http://internetofhomethings.com/homethings/?tag=contact-form" class="tag-link-9 tag-link-position-7" title="1 topic" style="font-size: 8pt;">contact form</a>
+<a href="http://internetofhomethings.com/homethings/?tag=d-link-dir-625-port-forwarding" class="tag-link-21 tag-link-position-8" title="1 topic" style="font-size: 8pt;">D-Link DIR-625 port forwarding</a>
+<a href="http://internetofhomethings.com/homethings/?tag=ddns-service" class="tag-link-23 tag-link-position-9" title="1 topic" style="font-size: 8pt;">DDNS service</a>
+<a href="http://internetofhomethings.com/homethings/?tag=dynamic-domain-name-service" class="tag-link-24 tag-link-position-10" title="1 topic" style="font-size: 8pt;">Dynamic domain name service</a>
+<a href="http://internetofhomethings.com/homethings/?tag=esp8266" class="tag-link-11 tag-link-position-11" title="4 topics" style="font-size: 22pt;">ESP8266</a>
+<a href="http://internetofhomethings.com/homethings/?tag=esp8266-adapter" class="tag-link-34 tag-link-position-12" title="1 topic" style="font-size: 8pt;">ESP8266 adapter</a>
+<a href="http://internetofhomethings.com/homethings/?tag=esp8266-arduino-ide-json" class="tag-link-18 tag-link-position-13" title="1 topic" style="font-size: 8pt;">ESP8266 Arduino IDE JSON</a>
+<a href="http://internetofhomethings.com/homethings/?tag=esp8266-flakey" class="tag-link-15 tag-link-position-14" title="1 topic" style="font-size: 8pt;">ESP8266 flakey</a>
+<a href="http://internetofhomethings.com/homethings/?tag=esp8266-flash-failures" class="tag-link-28 tag-link-position-15" title="1 topic" style="font-size: 8pt;">ESP8266 flash failures</a>
+<a href="http://internetofhomethings.com/homethings/?tag=esp8266-json" class="tag-link-17 tag-link-position-16" title="1 topic" style="font-size: 8pt;">ESP8266 JSON</a>
+<a href="http://internetofhomethings.com/homethings/?tag=esp8266-on-the-go" class="tag-link-48 tag-link-position-17" title="1 topic" style="font-size: 8pt;">ESP8266 on the go</a>
+<a href="http://internetofhomethings.com/homethings/?tag=esp8266-packaging" class="tag-link-36 tag-link-position-18" title="1 topic" style="font-size: 8pt;">ESP8266 packaging</a>
+<a href="http://internetofhomethings.com/homethings/?tag=esp8266-reliability" class="tag-link-35 tag-link-position-19" title="1 topic" style="font-size: 8pt;">ESP8266 reliability</a>
+<a href="http://internetofhomethings.com/homethings/?tag=esp8266-resets" class="tag-link-14 tag-link-position-20" title="1 topic" style="font-size: 8pt;">ESP8266 resets</a>
+<a href="http://internetofhomethings.com/homethings/?tag=esp8266-sdk-compile-errors" class="tag-link-40 tag-link-position-21" title="1 topic" style="font-size: 8pt;">ESP8266 SDK compile errors</a>
+<a href="http://internetofhomethings.com/homethings/?tag=esp8266-sdk-compile-fails" class="tag-link-41 tag-link-position-22" title="1 topic" style="font-size: 8pt;">ESP8266 SDK compile fails</a>
+<a href="http://internetofhomethings.com/homethings/?tag=esp8266-sdk-version-1-1-1" class="tag-link-39 tag-link-position-23" title="1 topic" style="font-size: 8pt;">ESP8266 SDK Version 1.1.1</a>
+<a href="http://internetofhomethings.com/homethings/?tag=esp8266-unstable" class="tag-link-16 tag-link-position-24" title="1 topic" style="font-size: 8pt;">ESP8266 unstable</a>
+<a href="http://internetofhomethings.com/homethings/?tag=esp8266-wifi" class="tag-link-66 tag-link-position-25" title="2 topics" style="font-size: 14.3pt;">ESP8266 WIFI</a>
+<a href="http://internetofhomethings.com/homethings/?tag=esp8266-wifi-connectivity" class="tag-link-38 tag-link-position-26" title="1 topic" style="font-size: 8pt;">ESP8266 WIFI connectivity</a>
+<a href="http://internetofhomethings.com/homethings/?tag=esp8266-wifi-drop-outs" class="tag-link-37 tag-link-position-27" title="1 topic" style="font-size: 8pt;">ESP8266 WIFI drop-outs</a>
+<a href="http://internetofhomethings.com/homethings/?tag=esp8266-will-not-flash" class="tag-link-26 tag-link-position-28" title="1 topic" style="font-size: 8pt;">ESP8266 will not flash</a>
+<a href="http://internetofhomethings.com/homethings/?tag=expand-esp8266-capability" class="tag-link-33 tag-link-position-29" title="1 topic" style="font-size: 8pt;">Expand ESP8266 capability</a>
+<a href="http://internetofhomethings.com/homethings/?tag=google-charts" class="tag-link-31 tag-link-position-30" title="1 topic" style="font-size: 8pt;">google charts</a>
+<a href="http://internetofhomethings.com/homethings/?tag=home-automation" class="tag-link-13 tag-link-position-31" title="2 topics" style="font-size: 14.3pt;">Home Automation</a>
+<a href="http://internetofhomethings.com/homethings/?tag=how-to-unbrick-esp8266" class="tag-link-27 tag-link-position-32" title="1 topic" style="font-size: 8pt;">How to unbrick ESP8266</a>
+<a href="http://internetofhomethings.com/homethings/?tag=icons" class="tag-link-8 tag-link-position-33" title="1 topic" style="font-size: 8pt;">icons</a>
+<a href="http://internetofhomethings.com/homethings/?tag=internet-of-things-home" class="tag-link-56 tag-link-position-34" title="4 topics" style="font-size: 22pt;">internet of things home</a>
+<a href="http://internetofhomethings.com/homethings/?tag=invalid-head-of-packet" class="tag-link-25 tag-link-position-35" title="1 topic" style="font-size: 8pt;">Invalid head of packet</a>
+<a href="http://internetofhomethings.com/homethings/?tag=iot" class="tag-link-12 tag-link-position-36" title="2 topics" style="font-size: 14.3pt;">IoT</a>
+<a href="http://internetofhomethings.com/homethings/?tag=mobile-app-from-html" class="tag-link-43 tag-link-position-37" title="1 topic" style="font-size: 8pt;">Mobile app from html</a>
+<a href="http://internetofhomethings.com/homethings/?tag=mobile-iot-sensors" class="tag-link-47 tag-link-position-38" title="1 topic" style="font-size: 8pt;">mobile IoT Sensors</a>
+<a href="http://internetofhomethings.com/homethings/?tag=more-esp8266-analog-inputs" class="tag-link-32 tag-link-position-39" title="1 topic" style="font-size: 8pt;">More ESP8266 Analog Inputs</a>
+<a href="http://internetofhomethings.com/homethings/?tag=nvg589-port-forwarding" class="tag-link-20 tag-link-position-40" title="1 topic" style="font-size: 8pt;">NVG589 port forwarding</a>
+<a href="http://internetofhomethings.com/homethings/?tag=port-forwarding-setup" class="tag-link-22 tag-link-position-41" title="1 topic" style="font-size: 8pt;">port forwarding setup</a>
+<a href="http://internetofhomethings.com/homethings/?tag=temperature-sensors" class="tag-link-29 tag-link-position-42" title="1 topic" style="font-size: 8pt;">temperature sensors</a>
+<a href="http://internetofhomethings.com/homethings/?tag=thingspeak" class="tag-link-30 tag-link-position-43" title="2 topics" style="font-size: 14.3pt;">ThingSpeak</a>
+<a href="http://internetofhomethings.com/homethings/?tag=thingspeak-8-fields" class="tag-link-46 tag-link-position-44" title="1 topic" style="font-size: 8pt;">ThingSpeak 8 Fields</a>
+<a href="http://internetofhomethings.com/homethings/?tag=wordpress" class="tag-link-6 tag-link-position-45" title="1 topic" style="font-size: 8pt;">Wordpress</a></div>
+</li>			</ul>
+
+
+				</div><!--sb end-->
+				
+			</div> <!--right-col-->		
+</div>
+<!--content end-->
+		
+
+	<!--footer-->
+	<div class="clear"></div>
+		
+		<div id="footer">
+		
+	
+	<!--footer container--><div class="row">	
+		
+		<div class="large-12 columns" id="footer-widget">
+			
+			<div id="footer-bar1" class="large-3 columns">
+					<ul class="xoxo">
+						<li id="calendar-3" class="widget-container widget_calendar"><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar">
+	<caption>October 2016</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="http://internetofhomethings.com/homethings/?m=201609">« Sep</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="5" class="pad">&nbsp;</td><td>1</td><td>2</td>
+	</tr>
+	<tr>
+		<td>3</td><td id="today">4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+	</tr>
+	<tr>
+		<td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td>
+	</tr>
+	<tr>
+		<td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
+	</tr>
+	<tr>
+		<td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+	</tr>
+	<tr>
+		<td>31</td>
+		<td class="pad" colspan="6">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></li>					</ul>
+					
+					
+</div><!--footer 1 end-->
+
+
+
+<div id="footer-bar2" class="large-3 columns">
+					<ul class="xoxo">
+						<li id="quotery-quote-widget-3" class="widget-container quotery-quote-class"><div class="quotery-quote-widget quotery-quote-widget-color-light">
+	<div class="quotery-quote-widget-title">Quote of the Day</div>
+	<div class="quotery-quote-widget-body">
+					<div class="quotery-quote-widget-author">
+				<div class="quotery-quote-widget-author-image">
+						<img src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/edward-r.jpg" alt="Edward R. Murrow ">
+				</div>
+				<div class="quotery-quote-widget-author-content">
+					<div class="quotery-quote-widget-author-name">
+						Edward R. Murrow					</div>
+					<div class="quotery-quote-widget-author-lived">1908 - 1965</div>
+				</div>
+			</div>
+				<div class="quotery-quote-widget-quote">
+			The newest computer can merely compound, at speed, the oldest problem
+ in the relations between human beings, and in the end the communicator 
+will be confronted with the old problem, of what to say and how to say 
+it.		</div>
+					<div class="quotery-quote-widget-social">
+				<span>Share</span>
+				<a href="http://pinterest.com/pin/create/%20button?url=http://www.quotery.com/quotes/the-newest-computer-can-merely-compound-at-speed-the-oldest/&amp;media=http://img.quotery.com/pictures/2013/09/edward-r.-murrow.jpg&amp;description=The%20newest%20computer%20can%20merely%20compound,%20at%20speed,%20the%20oldest%20problem%20in%20the%20relations%20between%20human%20beings,%20and%20in%20the%20end%20the%20communicator%20will%20be%20confronted%20with%20the%20old%20problem,%20of%20what%20to%20say%20and%20how%20to%20say%20it." rel="nofollow" class="entypo-social pinterest"></a>
+				<a href="http://plus.google.com/share?url=http://www.quotery.com/quotes/the-newest-computer-can-merely-compound-at-speed-the-oldest/" class="entypo-social googlep"></a>
+				<a href="http://twitter.com/share?url=http://www.quotery.com/quotes/the-newest-computer-can-merely-compound-at-speed-the-oldest/&amp;text=The%20newest%20computer%20can%20merely%20compound,%20at%20speed,%20the%20oldest%20problem%20in%20the%20relations%20between%20human%20beings,%20and%20in%20the%20end%20the%20communicator%20will%20be%20confronted%20with%20the%20old%20problem,%20of%20what%20to%20say%20and%20how%20to%20say%20it." class="entypo-social twitter" rel="nofollow"></a>
+				<a href="http://www.facebook.com/sharer.php?u=http://www.quotery.com/quotes/the-newest-computer-can-merely-compound-at-speed-the-oldest/&amp;title=The%20newest%20computer%20can%20merely%20compound,%20at%20speed,%20the%20oldest%20problem%20in%20the%20relations%20between%20human%20beings,%20and%20in%20the%20end%20the%20communicator%20will%20be%20confronted%20with%20the%20old%20problem,%20of%20what%20to%20say%20and%20how%20to%20say%20it." class="entypo-social facebook" rel="nofollow"></a>
+				<a href="http://www.tumblr.com/share?s=&amp;v=3&amp;u=http%3A%2F%2Fwww.quotery.com%2Fquotes%2Fthe-newest-computer-can-merely-compound-at-speed-the-oldest%2F&amp;t=The%20newest%20computer%20can%20merely%20compound,%20at%20speed,%20the%20oldest%20problem%20in%20the%20relations%20between%20human%20beings,%20and%20in%20the%20end%20the%20communicator%20will%20be%20confronted%20with%20the%20old%20problem,%20of%20what%20to%20say%20and%20how%20to%20say%20it." class="entypo-social tumblr" rel="nofollow"></a>
+			</div>
+			</div>
+	<div class="quotery-quote-widget-copy">Quotes via <a href="http://www.quotery.com/" target="_blank">Quotery</a></div>
+</div>
+</li>					</ul>
+</div><!--footer 2 end-->
+
+
+<div id="footer-bar3" class="large-3 columns">
+					<ul class="xoxo xoxo3">
+						<li id="text-7" class="widget-container widget_text"><h3 class="widget-title">Let’s keep in touch!</h3>			<div class="textwidget">Subscribe below to keep up with the latest information from Internet of Home Things:</div>
+		</li><li id="synved_social_follow-2" class="widget-container widget_synved_social_follow"><h3 class="widget-title">Follow Us</h3><div><a class="synved-social-button synved-social-button-follow synved-social-size-24 synved-social-resolution-normal synved-social-provider-facebook nolightbox" data-provider="facebook" target="_blank" rel="nofollow" title="Follow us on Facebook" href="http://www.facebook.com/internetofhomethings" style="font-size: 0px; width:24px;height:24px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="Facebook" title="Follow us on Facebook" class="synved-share-image synved-social-image synved-social-image-follow" style="display: inline; width:24px;height:24px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/facebook_003.png" width="24" height="24"></a><a class="synved-social-button synved-social-button-follow synved-social-size-24 synved-social-resolution-normal synved-social-provider-twitter nolightbox" data-provider="twitter" target="_blank" rel="nofollow" title="Follow Me On Twitter" href="http://twitter.com/NetHomeThings" style="font-size: 0px; width:24px;height:24px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="twitter" title="Follow us on Twitter" class="synved-share-image synved-social-image synved-social-image-follow" style="display: inline; width:24px;height:24px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/twitter.png" width="24" height="24"></a><a class="synved-social-button synved-social-button-follow synved-social-size-24 synved-social-resolution-normal synved-social-provider-google_plus nolightbox" data-provider="google_plus" target="_blank" rel="nofollow" title="Follow Me On Google" href="https://plus.google.com/u/0/b/111546542875880774718/111546542875880774718/posts" style="font-size: 0px; width:24px;height:24px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="google_plus" title="Follow us on Google+" class="synved-share-image synved-social-image synved-social-image-follow" style="display: inline; width:24px;height:24px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/google_plus.png" width="24" height="24"></a><a class="synved-social-button synved-social-button-follow synved-social-size-24 synved-social-resolution-normal synved-social-provider-pinterest nolightbox" data-provider="pinterest" target="_blank" rel="nofollow" title="Follow Me On Pinterest" href="https://www.pinterest.com/internetofhomet/internet-of-things/" style="font-size: 0px; width:24px;height:24px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="pinterest" title="Our Board on Pinterest" class="synved-share-image synved-social-image synved-social-image-follow" style="display: inline; width:24px;height:24px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/pinterest_002.png" width="24" height="24"></a><a class="synved-social-button synved-social-button-follow synved-social-size-24 synved-social-resolution-normal synved-social-provider-rss nolightbox" data-provider="rss" target="_blank" rel="nofollow" title="Follow our RSS" href="http://feeds.feedburner.com/InternetOfHomeThingsInternetOfHomeThings" style="font-size: 0px; width:24px;height:24px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="rss" title="Follow our RSS" class="synved-share-image synved-social-image synved-social-image-follow" style="display: inline; width:24px;height:24px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/rss.png" width="24" height="24"></a><a class="synved-social-button synved-social-button-follow synved-social-size-24 synved-social-resolution-normal synved-social-provider-youtube nolightbox" data-provider="youtube" target="_blank" rel="nofollow" title="Follow Me On YouTube" href="https://www.youtube.com/channel/UCNtTjCxM_hl3qKkilY9tIfA/videos" style="font-size: 0px; width:24px;height:24px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="youtube" title="Find us on YouTube" class="synved-share-image synved-social-image synved-social-image-follow" style="display: inline; width:24px;height:24px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/youtube.png" width="24" height="24"></a><a class="synved-social-button synved-social-button-follow synved-social-size-24 synved-social-resolution-normal synved-social-provider-tumblr nolightbox" data-provider="tumblr" target="_blank" rel="nofollow" title="Follow Me On Tumbler" href="https://www.tumblr.com/blog/internetofhomethings" style="font-size: 0px; width:24px;height:24px;margin:0;margin-bottom:8px;"><img alt="tumblr" title="Find us on tumblr" class="synved-share-image synved-social-image synved-social-image-follow" style="display: inline; width:24px;height:24px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/tumblr_003.png" width="24" height="24"></a><a class="synved-social-button synved-social-button-follow synved-social-size-24 synved-social-resolution-hidef synved-social-provider-facebook nolightbox" data-provider="facebook" target="_blank" rel="nofollow" title="Follow us on Facebook" href="http://www.facebook.com/internetofhomethings" style="font-size: 0px; width:24px;height:24px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="Facebook" title="Follow us on Facebook" class="synved-share-image synved-social-image synved-social-image-follow" style="display: inline; width:24px;height:24px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/facebook_002.png" width="24" height="24"></a><a class="synved-social-button synved-social-button-follow synved-social-size-24 synved-social-resolution-hidef synved-social-provider-twitter nolightbox" data-provider="twitter" target="_blank" rel="nofollow" title="Follow Me On Twitter" href="http://twitter.com/NetHomeThings" style="font-size: 0px; width:24px;height:24px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="twitter" title="Follow us on Twitter" class="synved-share-image synved-social-image synved-social-image-follow" style="display: inline; width:24px;height:24px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/twitter_003.png" width="24" height="24"></a><a class="synved-social-button synved-social-button-follow synved-social-size-24 synved-social-resolution-hidef synved-social-provider-google_plus nolightbox" data-provider="google_plus" target="_blank" rel="nofollow" title="Follow Me On Google" href="https://plus.google.com/u/0/b/111546542875880774718/111546542875880774718/posts" style="font-size: 0px; width:24px;height:24px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="google_plus" title="Follow us on Google+" class="synved-share-image synved-social-image synved-social-image-follow" style="display: inline; width:24px;height:24px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/google_plus_003.png" width="24" height="24"></a><a class="synved-social-button synved-social-button-follow synved-social-size-24 synved-social-resolution-hidef synved-social-provider-pinterest nolightbox" data-provider="pinterest" target="_blank" rel="nofollow" title="Follow Me On Pinterest" href="https://www.pinterest.com/internetofhomet/internet-of-things/" style="font-size: 0px; width:24px;height:24px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="pinterest" title="Our Board on Pinterest" class="synved-share-image synved-social-image synved-social-image-follow" style="display: inline; width:24px;height:24px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/pinterest.png" width="24" height="24"></a><a class="synved-social-button synved-social-button-follow synved-social-size-24 synved-social-resolution-hidef synved-social-provider-rss nolightbox" data-provider="rss" target="_blank" rel="nofollow" title="Follow our RSS" href="http://feeds.feedburner.com/InternetOfHomeThingsInternetOfHomeThings" style="font-size: 0px; width:24px;height:24px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="rss" title="Follow our RSS" class="synved-share-image synved-social-image synved-social-image-follow" style="display: inline; width:24px;height:24px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/rss_002.png" width="24" height="24"></a><a class="synved-social-button synved-social-button-follow synved-social-size-24 synved-social-resolution-hidef synved-social-provider-youtube nolightbox" data-provider="youtube" target="_blank" rel="nofollow" title="Follow Me On YouTube" href="https://www.youtube.com/channel/UCNtTjCxM_hl3qKkilY9tIfA/videos" style="font-size: 0px; width:24px;height:24px;margin:0;margin-bottom:8px;margin-right:8px;"><img alt="youtube" title="Find us on YouTube" class="synved-share-image synved-social-image synved-social-image-follow" style="display: inline; width:24px;height:24px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/youtube_002.png" width="24" height="24"></a><a class="synved-social-button synved-social-button-follow synved-social-size-24 synved-social-resolution-hidef synved-social-provider-tumblr nolightbox" data-provider="tumblr" target="_blank" rel="nofollow" title="Follow Me On Tumbler" href="https://www.tumblr.com/blog/internetofhomethings" style="font-size: 0px; width:24px;height:24px;margin:0;margin-bottom:8px;"><img alt="tumblr" title="Find us on tumblr" class="synved-share-image synved-social-image synved-social-image-follow" style="display: inline; width:24px;height:24px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/tumblr_002.png" width="24" height="24"></a></div></li>					</ul>
+					
+	</div><!--footer 3 end-->
+
+<div id="footer-bar4" class="large-3 columns">
+					<ul class="xoxo">
+						<li id="social-widget-8" class="widget-container Social_Widget"><div class="socialmedia-buttons smw_left"></div></li>					</ul>
+					
+	</div><!--footer 4 end-->			
+			</div><!--footer widget end-->
+		
+		</div><!-- row end-->		
+		
+		</div><!-- footer end-->				
+		
+	<div class="clear"></div>
+	
+		<div id="footer-info">		
+			
+				<!--footer container--><div class="row">
+				
+		<div class="large-12 columns">
+			
+			<div id="copyright">Copyright 2016 Internet of Home Things  </div>
+					
+			</div><!--footer info end-->		
+		</div><!-- footer container2-->				
+			
+	</div>
+	
+		<div style="display:none">
+	<div class="grofile-hash-map-968751766086172121961ff94dc38702">
+	</div>
+	<div class="grofile-hash-map-b3c768171628b0b96fddc148aebf81a7">
+	</div>
+	<div class="grofile-hash-map-f69bbe8612f346dd8ba44a920652f9ea">
+	</div>
+	<div class="grofile-hash-map-6521835d701ac1b3675c12d1786f14ba">
+	</div>
+	<div class="grofile-hash-map-2ebf9f60bf95b98349c44c186b90f12f">
+	</div>
+	<div class="grofile-hash-map-a595fee921a4ee0fa7d75cde679d5d77">
+	</div>
+	<div class="grofile-hash-map-b969018dba4cb56f4a6782d51e41309c">
+	</div>
+	<div class="grofile-hash-map-8e9baea8a070f68326514c84fbf44403">
+	</div>
+	</div>
+		<style>
+			/* Accessible for screen readers but hidden from view */
+			.fa-hidden { position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden; }
+			.rtl .fa-hidden { left:10000px; }
+			.fa-showtext { margin-right: 5px; }
+		</style>
+		<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/form.js"></script>
+<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/devicepx-jetpack.js"></script>
+<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/wpgroho.js"></script>
+<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/superfish.js"></script>
+<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/jquery_003.js"></script>
+<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/jquery_002.js"></script>
+<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/jquery.js"></script>
+<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/selectnav.js"></script>
+<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/responsive-scripts.js"></script>
+<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/core.js"></script>
+<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/custom-script.js"></script>
+<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/comment-reply.js"></script>
+<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/wp-embed.js"></script>
+<script type="text/javascript" src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/e-201640.js" async="" defer="defer"></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:4.3.1',blog:'85766716',post:'530',tz:'-7',srv:'internetofhomethings.com'} ]);
+	_stq.push([ 'clickTrackerInit', '85766716', '530' ]);
+</script>
+
+
+
+</div></div></div><img src="Internet%20of%20Home%20Things%20%C2%BB%208%20ESP8266%20analog%20inputs%20for%2022%20cents_files/g.gif" alt=":)" id="wpstats" width="6" height="5"></body></html>

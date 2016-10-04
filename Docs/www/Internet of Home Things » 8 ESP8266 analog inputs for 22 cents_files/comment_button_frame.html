@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="comment_button_frame_data/comment_button.js"></script>
+<style type="text/css">
+	body {padding:0;}
+	table th {padding:2px; text-align:right; }
+	table td {padding:2px;}
+	#ec-title-input {width:200px;}
+	#ec-lang-input {width:200px;}
+	#ec-tag-input {width:120px;}
+	#submit {width:60px;}
+</style>
+<script type="text/javascript">
+<!--
+
+topDoc =  window.top.document;
+
+function ecshowWindow(){
+	window.top.ECshowCommentWindow();
+}
+
+function loadLangList(l){
+	selectObj = document.getElementsByTagName('select')[0];
+	if(l==undefined) l=window.top.EasyCodeLanguageList;
+	if (l && selectObj.length<=1){
+		for(i=0;i<l.length;i++){
+			y=document.createElement('option');
+			y.text=l[i];
+			selectObj.add(y);
+		}
+	}
+}
+
+function insertCodeBox(){
+	var title = document.getElementById('ec-title-input').value;
+	var langObj = document.getElementById('ec-lang-input');
+	lang = langObj.options[langObj.selectedIndex].value;
+	var tag = document.getElementById('ec-tag-input').selectedIndex;
+	title = title?(' '+title.replace(/code]/g,'code/]')):'';
+	if(lang===undefined || lang=='None') lang='';
+
+	var insert = '',gui=' Stuff with your code! ';
+	switch (tag){
+	case 1:
+		insert =insert+ '['+lang+'code '+title+']\n'+gui+'\n[/code]';
+		break;
+	case 0:
+		insert = '<pre class="easycode;';
+		insert = insert+ (title?'title:'+title+';':'');
+		insert = insert+ (lang?'lang:'+lang+';':'');
+		insert = insert+'">\n'+gui+'\n</pre>';
+		break;
+	case 2:
+		insert = '<code>\n'+gui+'\n</code>';
+		break;
+	}
+	var textAreaObj = topDoc.getElementById('comment');
+	var con = textAreaObj.value;
+	var pos = getAreaRange(textAreaObj);
+	var context = {'start':con.slice(0, pos.start),'end':con.slice(pos.end)};
+
+	textAreaObj.value = context.start + insert + context.end;
+	ecshowWindow();
+}
+
+function getAreaRange(obj) {
+	pos = new Object();
+	isIE = (navigator.appName.toLowerCase().indexOf('internet explorer')+1?1:0);
+	if (isIE) {
+		obj.focus();
+		range = topDoc.selection.createRange();
+		clone = range.duplicate();
+		
+		clone.moveToElementText(obj);
+		clone.setEndPoint( 'EndToEnd', range );
+		pos = {'start':clone.text.length-range.text.length,'end':clone.text.length-range.text.length+range.text.length};
+  	}else if(window.top.getSelection()) {
+		pos = {'start':obj.selectionStart,'end':obj.selectionEnd};
+	}
+	return pos;
+}
+
+
+
+//-->
+</script>
+</head>
+<body onload="loadLangList()">
+<form name="insert_ec_codebox" action="###">
+<table width="200" cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<th scope="row"></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th scope="row">Title</th>
+		<td><input id="ec-title-input" name="title" type="text"></td>
+	</tr>
+	<tr>
+		<th scope="row">Language</th>
+		<td>
+		<select name="lang" id="ec-lang-input">
+			<option value="None" selected="selected">None</option>
+		<option>CSS</option><option>HTML</option><option>JavaScript</option><option>PHP</option></select>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Tag</th>
+		<td>
+			<select name="tag" id="ec-tag-input">
+				<option id="pre-tag" selected="selected">&lt;pre&gt;</option>
+			</select>
+			<input id="submit" value="Insert" onclick="insertCodeBox();" type="button">
+		</td>
+	</tr>
+</tbody></table>
+</form>
+
+</body></html>

@@ -1,0 +1,12 @@
+#easycode_comment_insert{position:absolute;border:solid gray 1px;background:white;box-sizing:content-box;transition:0.3s all;}
+#easycode_comment_insert.easycode_show_window{width:300px;height:100px;}
+#easycode_comment_insert.easycode_hide_window{min-width:20px;min-height:20px;width:20px;height:20px;}
+#easycode_comment_insert #easycode_comment_button {position:absolute;background:url(toolbar_button.gif) no-repeat;height:20px;width:20px;z-index:1;}
+#easycode_comment_insert iframe {width:100%;height:100%;}
+
+
+	
+
+
+
+

@@ -1,0 +1,211 @@
+/* DSA 2/16/15 - Suppressing footer UL bullet */
+.xoxo {
+	list-style-type:none;
+	margin-top: 3px;
+}
+
+#footer-bar3 li {
+	margin-top: 5px !important;
+	margin-bottom: 5px !important;
+}
+
+.post-entry strong {
+	margin-left:17px;
+}
+
+#left-col {
+	border-radius:3px;
+}
+
+.lcp_catlist a:hover {
+	text-decoration:none;
+	font-weight:bold;
+}
+.lcp_catlist a {
+ color:white;
+}
+#menubar li {
+	background-color: #084049;
+	margin-top:5px;
+}
+
+/* Responsive Blog posts */
+
+/* default style */
+.lcp_catlist li {
+	list-style-type: none;
+	height:20px;
+ width:800px;
+	background-color:#084049;
+	padding-left: 7px !important;
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+	border-radius:0px; 
+}
+
+/************************
+#menu-main-menu { 
+  	width: 600px; 
+}
+*************************/
+
+
+/* small screen *
+@media screen and (max-width: 600px) {
+  .js .lcp_catlist li { height:200px; }
+}
+*/
+/* micro screen */
+@media (max-width: 900px) {
+  .js .lcp_catlist li { height:20px; }
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+    /* since 3.1.0 */
+    .navbar-collapse.collapse.in { 
+        display: block!important;
+    }
+    .collapsing {
+        overflow: hidden!important;
+    }
+
+
+//////////////////////
+}
+
+/* Contact page styling *
+.contact_label {
+	margin-top:20px !important;
+  	text-align:left;
+  
+}
+*/
+#fname {
+	margin-bottom:4px;
+}
+#subhead_container {
+  	background-color: #084049;
+  	//height:45px;
+  
+}
+#subhead_container h1 {
+	//margin-top:-16px;
+	//padding-left:5px;
+  	color:white;
+}
+
+/*  clear bootstrap header colors & style container */
+.navbar-default {
+    	background-color: white;
+    	border-color: white;
+  	margin-top: 12px;
+  	margin-bottom: 3px;
+  	overflow:hidden;
+        width: 100% !important;
+}
+
+
+/* set nav menu position & style */
+.nav li {
+	margin-top:12px;
+}
+.nav {
+ margin-left:0px;
+  	float:left;
+  	/* width:auto; */
+}
+.navbar-default .navbar-nav > li > a {
+    	color: #084049;
+}
+
+.navbar-default .navbar-nav> .active a:hover,
+.navbar-default .navbar-nav> .active > a {
+  	color:white;
+  	background-color: #084049;
+  	font-weight: bold;
+}
+
+.navbar-default .navbar-nav> li > a:hover {
+  	color:white;
+  	background-color: #084049;
+}
+
+.navbar-default .navbar-nav> .active > a, 
+.navbar-default .navbar-nav> .active > a:focus {
+  	color:#084049;
+  	background-color: #F0F0F0;
+  	font-weight: bold;
+}
+
+/* footer widget positioning for small screens */
+#footer-bar1
+{
+	margin-left: -8px !important;
+}
+#footer-bar2
+{
+	margin-left: -8px !important;
+}
+#footer-bar3
+{
+	margin-left: -8px !important;
+}
+#footer-bar4
+{
+	margin-left: -8px !important;
+}
+/* bring contact page text to left margin */
+#contacttext {
+	margin-top: -15px;
+	margin-left: 20px;
+} 
+/* style social media follow icons in header */
+
+#sm-follow {
+  	float: left;
+	margin-top: 15px;
+	padding-left: 18px;
+}
+/* Style Social Icons in Menu */
+.navbar-default .social-icon {
+	float:right; 
+  	margin:4px -8px 0px -8px;
+}
+#blogo {
+  	float:left;
+  	margin-top:3px;
+}
+/* Change contact page submit button on hover */
+#fscf_submit1:hover {
+  	background-color:#1E8CBE !important;
+}
+#fscf_form_fieldset1,
+#fscf_form_fieldset1 input,
+#fscf_form_fieldset1 textarea {
+	border-radius:4px;  
+}

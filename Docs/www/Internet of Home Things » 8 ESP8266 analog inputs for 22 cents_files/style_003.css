@@ -1,0 +1,157 @@
+.weatherLayer
+{
+	width: 450px;
+	margin: 0 auto;
+	border: 1px solid #FFF;
+	background: #EEE;
+	box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.3);
+	font-size: 13px;
+}
+
+.weatherLayer.vertical
+{
+	width: 220px;
+	margin-bottom: 20px;
+}
+
+.weatherLayer .title
+{
+	display: block;
+	margin-top: 3px;
+	margin-bottom: 15px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.weatherLayer .theDay
+{
+	float: left;
+	width: 205px;
+	min-height: 110px;
+	margin-left: 10px;
+	padding-right: 10px;
+	background: url('images/separation.png') no-repeat top right;
+}
+
+.weatherLayer.vertical .theDay
+{
+	width: 210px;
+	padding-right: 0;
+	background: none;
+}
+
+.weatherLayer .theDay .weatherIcon
+{
+	float: left;
+	margin-top: 5px;
+	margin-right: 8px;
+	box-shadow: none;
+}
+
+.weatherLayer .theDayTitle
+{
+	display: block;
+	margin-bottom: 8px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.weatherLayer .theDayInfos
+{
+	float: left;
+	width: 135px;
+}
+
+.weatherLayer.vertical .theDayInfos
+{
+	float: right;
+}
+
+.weatherLayer .theDay .degrees
+{
+	font-size: 20px;
+}
+
+.weatherLayer .degrees.coldDegrees
+{
+	color: #275daf;
+}
+
+.weatherLayer .degrees.temperateDegrees
+{
+	color: #e6895b;
+}
+
+.weatherLayer .degrees.hotDegrees
+{
+	color: #af2e10;
+}
+
+.weatherLayer .otherDays
+{
+	float: right;
+	padding: 0;
+	margin: 0px 10px 0px 0px;
+}
+
+.weatherLayer.vertical .otherDays
+{
+	margin-bottom: 5px;
+}
+
+.weatherLayer .otherDays li
+{
+	list-style: none;
+	display: block;
+	float: left;
+	width: 90px;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+
+.weatherLayer .otherDays .otherDayTitle
+{
+	display: block;
+	margin-top: 2px;
+	line-height: 12px;
+	font-weight: bold;
+	
+}
+
+.weatherLayer .otherDays .afterDay
+{
+	font-style: italic;
+	font-size: 12px;
+	color: #9C9C9C;
+}
+
+.weatherLayer .otherDays .weatherIcon
+{
+	display: block;
+	margin: 5px auto 0px auto;
+	box-shadow: none;
+}
+
+.weatherLayer .branding
+{
+	clear: both;
+	margin: 0;
+	padding: 0;
+	background: #DFDFDF;
+	border-top: 1px solid #FFF;
+	text-align: right;
+	font-size: 12px;
+	font-style: italic;
+	line-height: 20px;
+	vertical-align: middle;
+	padding-right: 5px;
+	color: #999;
+}
+
+.weatherLayer .branding a
+{
+	text-decoration: none;
+	color: #999;
+}
